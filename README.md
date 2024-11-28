@@ -36,11 +36,6 @@ A design pattern used in software engineering to establish a one-to-many depende
 - The system should be scalable to handle a growing number of subscribers without compromising performance.
 - Ensure that the implementation follows object-oriented design principles and promotes loose coupling between the news agency and subscribers.
 
-## Implementation of Observer Pattern
-
-<p align="center">
-    <img src="image.png" alt="Centered Image" /><br>
-</p>
 
 ## Unified Modeling Language (UML) Class Diagram
 
