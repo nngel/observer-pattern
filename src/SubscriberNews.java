@@ -1,6 +1,4 @@
-
 import java.util.*;
-
 
 public class SubscriberNews implements Subscriber {
     private String name;
@@ -18,19 +16,6 @@ public class SubscriberNews implements Subscriber {
     }
 
     @Override
-    public void subscribeToNewsAgency(NewsAgency newsAgency) {
-        this.newsAgency = newsAgency;
-        newsAgency.subscribe(this);
-    }
-
-    @Override
-    public void unsubscribeFromNewsAgency() {
-        if (newsAgency != null) {
-            newsAgency.unsubscribe(this);
-        }
-    }
-
-    @Override
     public void modifyPreferences(List<String> newPreferences) {
         preferencesList = newPreferences;
         System.out.println(name + ": " + preferencesList);
@@ -42,6 +27,19 @@ public class SubscriberNews implements Subscriber {
                 return true;
         }
         return false;
+    }
+
+    @Override
+    public void subscribeToNewsAgency(NewsAgency newsAgency) {
+        this.newsAgency = newsAgency;
+        newsAgency.subscribe(this);
+    }
+
+    @Override
+    public void unsubscribeFromNewsAgency() {
+        if (newsAgency != null) {
+            newsAgency.unsubscribe(this);
+        }
     }
 
     @Override

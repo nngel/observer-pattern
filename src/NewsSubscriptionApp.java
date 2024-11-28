@@ -1,14 +1,11 @@
-
 import java.util.*;
-
 
 public class NewsSubscriptionApp {
  
     public static void main(String[] args) {
 
         while(true){
-        	
-            header();
+
             NewsAgency newsAgency = new NewsAgency();
             Scanner userInput = new Scanner(System.in);
          
@@ -55,7 +52,7 @@ public class NewsSubscriptionApp {
             newsAgency.publishNews("(Natural Disasters)  7.5 quake devastates region");
             System.out.println();
             
-            System.out.println("  \t\t--------|| Modify User Preferences: ||-------\n");
+            System.out.println("===== Modify User Preferences: =====\n");
             for (Subscriber subscriber : subscribersList) {
                 while (true) {
                     System.out.print(subscriber.getName() + ": Modify "+subscriber.getName()+"'s preferences? [YES/NO]: ");
@@ -82,7 +79,7 @@ public class NewsSubscriptionApp {
                 }
             }
 
-            System.out.println("  \t\t--------||     Unsubcribe User:    ||-------\n");
+            System.out.println("===== Unsubcribe User: =====");
             
 	            for (Subscriber subscriber : subscribersList) {
 	                System.out.print("Unsubscribe " + subscriber.getName() + "? [YES/NO]: ");
@@ -133,7 +130,7 @@ public class NewsSubscriptionApp {
             boolean validExitChoice = false;
 
             while (!validExitChoice) {
-                System.out.print("\nDo you still wish to use the program? [YES/NO]: ");
+                System.out.print("\nExit program? [YES/NO]: ");
                 exitChoice = userInput.nextLine().toLowerCase();
 
                 if (exitChoice.equals("yes") || exitChoice.equals("no")) {
@@ -144,23 +141,10 @@ public class NewsSubscriptionApp {
                 }
             }
 
-            if (exitChoice.equals("no")) {
-            	 displayprogrammer();
+            if (exitChoice.equals("yes")) {
                 userInput.close();
                 System.exit(0);
             }
         }
-        
     }
-
-    public static void displayprogrammer() {
-	  	System.out.println("\n \t\t-------------> App Shuting Down <------------\n");	
-        System.exit(0);
-    }
-    public static void header() {
-		   
-		   System.out.println("\n\t(======================= WELCOME TO ==========================)");
-		   System.out.println("\t(========== Real-time News Subscription Service ==============)");
-		   System.out.println("\t---------------------------------------------------------------\n");
-	    }  
 }
